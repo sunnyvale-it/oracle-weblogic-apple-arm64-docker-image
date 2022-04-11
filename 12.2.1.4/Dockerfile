@@ -17,6 +17,8 @@ RUN mkdir /u01 && \
     chown oracle:root -R /u01 && \
     chmod -R 775 /u01
 
+
+
 COPY --chown=oracle:root $JDK_PKG $FMW_JAR install.file oraInst.loc /u01/
 
 RUN tar xf $JDK_PKG
@@ -27,6 +29,10 @@ RUN mkdir -p /u01/oracle/app/middleware && \
     mkdir -p /u01/oracle/app/config/domains && \
     mkdir -p /u01/oracle/app/config/applications
 
-#RUN ${JAVA_HOME}/bin/java -jar /u01/$FMW_JAR -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc /u01/jdk1.8.0_202 -ignoreSysPrereqs -force -novalidation ORACLE_HOME=$ORACLE_HOME INSTALL_TYPE="WebLogic Server" && \
-#   rm /u01/$FMW_JAR /u01/$FMW_PKG /u01/install.file && \
-#   rm -rf /u01/oracle/cfgtoollogs
+WORKDIR /u01
+
+RUN tar xf $JDK_PKG
+
+RUN ${JAVA_HOME}/bin/java -jar /u01/$FMW_JAR -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc /u01/jdk1.8.0_202 -ignoreSysPrereqs -force -novalidation ORACLE_HOME=$ORACLE_HOME INSTALL_TYPE="WebLogic Server" && \
+    rm /u01/$FMW_JAR /u01/$FMW_PKG /u01/install.file && \
+    rm -rf /u01/oracle/cfgtoollogs
