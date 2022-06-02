@@ -32,5 +32,6 @@ WORKDIR /u01
 RUN tar xf $JDK_PKG
 
 RUN ${JAVA_HOME}/bin/java -jar /u01/$FMW_JAR -debug -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc $JAVA_HOME -ignoreSysPrereqs -force -novalidation ORACLE_HOME=$ORACLE_HOME INSTALL_TYPE="WebLogic Server" && \
-    rm /u01/$FMW_JAR /u01/$FMW_PKG /u01/install.file && \
-    rm -rf /u01/oracle/cfgtoollogs
+    test $? -eq 0 && chmod -R g+r /u01/oracle || (cat /tmp/OraInstall*/install*.log && exit 1)
+    # rm /u01/$FMW_JAR /u01/$FMW_PKG /u01/install.file && \
+    # rm -rf /u01/oracle/cfgtoollogs
