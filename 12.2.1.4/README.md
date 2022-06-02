@@ -1,3 +1,5 @@
 
 
- docker buildx build --platform linux/arm64 -t sunnyvaleit/oracle-weblogic:14.1.1.0-java11 . --load
+ docker buildx build --platform linux/arm64 -t sunnyvaleit/oracle-weblogic:12.2.1.4-java8 . --load
+
+ docker build -t sunnyvaleit/oracle-weblogic:12.2.1.4-java8 .
