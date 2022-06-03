@@ -15,13 +15,13 @@ The arm64 WebLogic base image creation is split in two phases:
 
 ### Get an arm64 JDK tar.gz distribution
 
-An arm64 JDK tar.gz distribution can be obtained form Oracle website at https://www.oracle.com/java/technologies/downloads/.
+An arm64 JDK tar.gz distribution can be obtained from Oracle website at https://www.oracle.com/java/technologies/downloads/.
 
-Be aware that JDK version must be compatible with the WebLogic version you want to use, ie: WebLogic 12.2.1.4 need JDK version 8.
+Be aware that JDK version must be compatible with the WebLogic version you want to use, ie: WebLogic 12.2.1.4 requires JDK version 8.
 
 __Pay attention to download the ARM version of the Oracle JDK__
 
-### Get WebLogic 
+### Get WebLogic software
 
 Unfortunately, the WebLogic installer does not support the arm64 architecture, so we can not rely on it to install WebLogic on an Oracle Linux base image.
 
