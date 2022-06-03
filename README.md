@@ -49,7 +49,6 @@ To build the WebLogic base image for arm64 architecture, run the following comma
 
 ```console
 $ docker build \
-    --build-arg WLS_VERSION=12.2.1.4 \
     --build-arg JDK_PKG=jdk-8u202-linux-arm64-vfp-hflt.tar.gz \
     -t sunnyvaleit/oracle-weblogic:12.2.1.4-java8 \
     .
