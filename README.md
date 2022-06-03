@@ -32,7 +32,13 @@ Having said this, the right thing to do is to obtain an already-installed WebLog
 The command below starts a WebLogic 12.2.1.4 container an copy the WebLogic installation directory in the current path.
 
 ```console
-$ docker run --platform linux/amd64 -v $(pwd):/mnt/tmp --rm -ti container-registry.oracle.com/middleware/weblogic:12.2.1.4 cp -r /u01/oracle /mnt/tmp
+$ docker run \
+    --platform linux/amd64 \
+    -v $(pwd):/mnt/tmp \
+    --rm \
+    -ti \
+    container-registry.oracle.com/middleware/weblogic:12.2.1.4 \
+    cp -r /u01/oracle /mnt/tmp
 ```
 
 This may take a while, just wait for the container to complete its job.
@@ -42,6 +48,10 @@ This may take a while, just wait for the container to complete its job.
 To build the WebLogic base image for arm64 architecture, run the following command. In the example below, we are building a WLS 12.2.1.4 base image with Oracle JDK package jdk-8u202-linux-arm64-vfp-hflt.tar.gz
 
 ```console
-$ docker build --build-arg WLS_VERSION=12.2.1.4 --build-arg JDK_PKG=jdk-8u202-linux-arm64-vfp-hflt.tar.gz -t sunnyvaleit/oracle-weblogic:12.2.1.4-java8 .
+$ docker build \
+    --build-arg WLS_VERSION=12.2.1.4 \
+    --build-arg JDK_PKG=jdk-8u202-linux-arm64-vfp-hflt.tar.gz \
+    -t sunnyvaleit/oracle-weblogic:12.2.1.4-java8 \
+    .
 ```
 
