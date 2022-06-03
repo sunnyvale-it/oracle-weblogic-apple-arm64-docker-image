@@ -21,6 +21,8 @@ Be aware that JDK version must be compatible with the WebLogic version you want 
 
 __Pay attention to download the ARM version of the Oracle JDK__
 
+Having downloaded the arm64 JDK tar.gz distribution, put the archive in the current folder.
+
 ### Get WebLogic software
 
 Unfortunately, the WebLogic installer does not support the arm64 architecture, so we can not rely on it to install WebLogic on an Oracle Linux base image.
