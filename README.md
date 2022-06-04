@@ -9,6 +9,8 @@ This procedure reference WebLogic 12.2.1.4 (which it has been tested against) bu
 
 ## Disclaimer
 
+WebLogic server is not officially supported on Apple M1 or on any other ARM-based architecture.
+
 The source code contained in this repo as well as this WebLogic installation procedure and its usage, do not belong to and are not supported/endorsed by Oracle or any of its subsidiaries.
 
 You have to be entitled to download and run WebLogic as well as the Oracle JDK.
