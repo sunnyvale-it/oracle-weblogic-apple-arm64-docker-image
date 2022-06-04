@@ -54,7 +54,9 @@ This may take a while due to the x86 instructionset emulation, just wait for the
 
 ### Build the arm64 WebLogic base image
 
-To build the WebLogic base image for arm64 architecture, run the following command. In the example below, we are building a WLS 12.2.1.4 base image with Oracle JDK package jdk-8u202-linux-arm64-vfp-hflt.tar.gz
+To build the WebLogic base image for arm64 architecture we can leverage the Dockerfile provided by this repo. 
+
+In the example below, we are building a WLS 12.2.1.4 base image with Oracle JDK package jdk-8u202-linux-arm64-vfp-hflt.tar.gz
 
 ```console
 $ docker build \
