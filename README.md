@@ -1,7 +1,6 @@
 # How to run Oracle WebLogic Server on Apple M1 (arm64 processor family), without x86 emulation
 
 ![logo](img/logo.jpg)
-
 Although considered not compatible on Apple M1 (arm64) CPU architecture by Oracle itself, WebLogic DOES work on ARM-based processor family (installer a part). 
 
 In this repo we will try to document the procedure we followed, at Sunnyvale, to have WebLogic running on the MacBook Pro with M1 processor for testing purpose only; hoping this will help other JavaEE developers equipped with Apple M1 processor or with any other ARM-based PC.
