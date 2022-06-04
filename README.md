@@ -1,10 +1,12 @@
-# How to run Oracle WebLogic Server on Apple M1 (arm64) processor family without x86 emulation
+# How to run Oracle WebLogic Server on Apple M1 (arm64) processor family, without x86 emulation
 
 Although considered not compatible on Apple M1 (arm64) CPU architecture by Oracle itself, WebLogic DOES work on ARM-based processor family (installer a part). In this repo I'll try to document the procedure I followed to have it running on my MacBook Pro, hoping this will benefit also to other Apple M1 users.
 
+This procedure reference WebLogic 12.2.1.4 (which it has been tested against) but can be use as a starting point to obtain the same for WebLogic 14.x.
+
 ## Disclaimer
 
-The source code contained in this repo as well as this WebLogic installation procedure and usage, do not belong to and are not supported/endorsed by Oracle or any of its subsidiaries.
+The source code contained in this repo as well as this WebLogic installation procedure and its usage, do not belong to and are not supported/endorsed by Oracle or any of its subsidiaries.
 
 ## Create the arm64 WebLogic base image
 
@@ -29,7 +31,7 @@ Unfortunately, the WebLogic installer does not support the arm64 architecture, s
 
 Having said this, the right thing to do is to obtain an already-installed WebLogic installation directory; we can get it from a standard WebLogic baseimage for the x86 architecture.
 
-The command below starts a WebLogic 12.2.1.4 container an copy the WebLogic installation directory in the current path.
+The command below starts an x86 WebLogic 12.2.1.4 container and copy the installation directory in the current path of host machine.
 
 ```console
 $ docker run \
@@ -41,7 +43,7 @@ $ docker run \
     cp -r /u01/oracle /mnt/tmp
 ```
 
-This may take a while, just wait for the container to complete its job.
+This may take a while due to the x86 instructionset emulation, just wait for the container to complete its job.
 
 ### Build the arm64 WebLogic base image
 
@@ -54,3 +56,11 @@ $ docker build \
     .
 ```
 
+## Run an arm64 WebLogic container
+
+Since this documentation is not meant to substitute the Oracle official one but just to provide a way to build an arm64 WebLogic base image, the way you can run a container for local JavaEE development is better described by Oracle itself, for example following those two tutorials:
+
+- Using the **WebLogic arm64 image** as a base, you may want to [create the Domain Home in Image WebLogic image](https://github.com/oracle/docker-images/tree/main/OracleWebLogic/samples/12213-domain-home-in-image) (this will create a domain starting from your WebLogic installation)
+- Then, using the **Domain Home in Image WebLogic image** as a base, you may want to [create the Application Deployment WebLogic image](https://github.com/oracle/docker-images/tree/main/OracleWebLogic/samples/12213-deploy-application) (this will use your domain to deploy an application within)
+
+By running a container of **Application Deployment WebLogic image**, you finally have a running arm64-native WebLogic instance locally with your application deployed.
