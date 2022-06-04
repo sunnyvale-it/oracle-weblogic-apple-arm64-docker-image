@@ -12,6 +12,8 @@ This procedure reference WebLogic 12.2.1.4 (which it has been tested against) bu
 
 The source code contained in this repo as well as this WebLogic installation procedure and its usage, do not belong to and are not supported/endorsed by Oracle or any of its subsidiaries.
 
+You have to be entitled to run/download WebLogic as well as Oracle JDK.
+
 ## Create the arm64 WebLogic base image
 
 The arm64 WebLogic base image creation is split in two phases:
