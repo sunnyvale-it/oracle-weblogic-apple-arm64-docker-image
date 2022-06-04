@@ -15,7 +15,7 @@ The source code contained in this repo as well as this WebLogic installation pro
 
 You have to be entitled to download and run WebLogic as well as the Oracle JDK.
 
-Oracle and Apple logos are properties of their respective owners
+Oracle and Apple logos are properties of their respective owners.
 
 ## Create the arm64 WebLogic base image
 
