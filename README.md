@@ -69,7 +69,7 @@ $ docker build \
 
 ## Run an arm64 WebLogic container
 
-Since this documentation is not meant to substitute the Oracle official one but just to provide a way to build an arm64 WebLogic base image, the way you can run a container for local JavaEE development is better described by Oracle itself, for example following those two tutorials:
+Since this documentation is not meant to substitute the Oracle's official one but just to provide a way to build an arm64 WebLogic base image, the way you can run a container for local JavaEE development is better described by Oracle itself, for example following those two tutorials:
 
 - Using the **WebLogic arm64 image** as a base, you may want to [create the Domain Home in Image WebLogic image](https://github.com/oracle/docker-images/tree/main/OracleWebLogic/samples/12213-domain-home-in-image) (this will create a domain starting from your WebLogic installation)
 - Then, using the **Domain Home in Image WebLogic image** as a base, you may want to [create the Application Deployment WebLogic image](https://github.com/oracle/docker-images/tree/main/OracleWebLogic/samples/12213-deploy-application) (this will use your domain to deploy an application within)
