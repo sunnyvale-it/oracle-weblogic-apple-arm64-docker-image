@@ -5,7 +5,7 @@ Although considered not compatible on Apple M1 (arm64) CPU architecture by Oracl
 
 In this repo we will try to document the procedure followed at Sunnyvale to have a containerised WebLogic running on the MacBook Pro with M1 processor (for testing purpose only); hoping this will help other JavaEE developers equipped with Apple M1 processor or with any other ARM-based PC.
 
-This procedure reference WebLogic 12.2.1.4 (which it has been tested against) but can be use as a starting point to obtain the same for WebLogic 14.x.
+This procedure references WebLogic 12.2.1.4 (which it has been tested against) but can be use as a starting point to obtain the same for WebLogic 14.x.
 
 ## Disclaimer
 
